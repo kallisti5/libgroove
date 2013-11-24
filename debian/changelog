@@ -1,0 +1,45 @@
+libgroove (3.0.0-1ubuntu1) saucy; urgency=low
+
+  * fix build when libspeexdsp is installed
+  * cmake: support 2.8.7
+  * groove.h conforms to C90
+  * buffer implemented with pthreads instead of SDL
+  * playlist: fix GrooveBuffer ref/unref race condition.
+  * update libav to d4df02131b5522
+  * playlist: set sent_end_of_q at playlist create
+  * better timestamp setting
+  * queue: depend on pthread instead of SDL2
+  * file: depend on pthreads instead of SDL2
+  * isolate SDL dependency to player
+  * encoder: depend on pthread instead of SDL2
+  * player: use pthread for mutexes instead of SDL2
+  * loudness detector: depend on pthread instead of SDL2
+  * playlist: use pthread for mutexes instead of SDL2
+  * separate independent components into their own librares.
+  * build: use the same version info for all libs
+
+ -- Andrew Kelley <superjoe30@gmail.com>  Sun, 24 Nov 2013 17:07:27 -0500
+
+libgroove (2.0.2-4) saucy; urgency=low
+
+  * fix the .install files
+
+ -- Andrew Kelley <superjoe30@gmail.com>  Tue, 19 Nov 2013 22:25:00 -0500
+
+libgroove (2.0.2-3) saucy; urgency=low
+
+  * fix debian/libgroove2.install
+
+ -- Andrew Kelley <superjoe30@gmail.com>  Tue, 19 Nov 2013 21:46:00 -0500
+
+libgroove (2.0.2-2) saucy; urgency=low
+
+  * fix debian/control
+
+ -- Andrew Kelley <superjoe30@gmail.com>  Tue, 19 Nov 2013 00:08:57 -0500
+
+libgroove (2.0.2-1) saucy; urgency=low
+
+  * Initial release
+
+ -- Andrew Kelley <superjoe30@gmail.com>  Tue, 19 Nov 2013 00:12:36 -0500

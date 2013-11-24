@@ -1,0 +1,77 @@
+Source: libgroove
+Priority: extra
+Maintainer: Andrew Kelley <superjoe30@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), cmake, libbz2-dev, yasm, libsdl2-dev, libmp3lame-dev, libebur128-dev
+Standards-Version: 3.9.4
+Section: libs
+Homepage: https://github.com/superjoe30/libgroove
+Vcs-Git: git://github.com/superjoe30/libgroove.git
+Vcs-Browser: https://github.com/superjoe30/libgroove
+
+Package: libgroove-dev
+Section: libdevel
+Architecture: any
+Depends: libgroove3 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: generic music player backend C library
+ Uses libav for robust decoding and encoding.
+ Add and remove entries on a playlist for gapless playback.
+ Supports idempotent pause, play, and seek.
+ Per-playlist-item gain adjustment so you can implement loudness compensation
+ without audio glitches.
+ Read and write metadata tags.
+ Extensible sink-based interface. A sink provides resampling and keeps its
+ buffer full.
+ raw sink - provides reference-counted raw audio buffers you can do whatever
+ you like with. For example a real-time audio visualization. All other sink
+ types are built on top of this one.
+ Thread-safe.
+
+
+Package: libgroove3
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: generic music player backend C library
+ Uses libav for robust decoding and encoding.
+ Add and remove entries on a playlist for gapless playback.
+ Supports idempotent pause, play, and seek.
+ Per-playlist-item gain adjustment so you can implement loudness compensation
+ without audio glitches.
+ Read and write metadata tags.
+ Extensible sink-based interface. A sink provides resampling and keeps its
+ buffer full.
+ raw sink - provides reference-counted raw audio buffers you can do whatever
+ you like with. For example a real-time audio visualization. All other sink
+ types are built on top of this one.
+ Thread-safe.
+
+
+Package: libgrooveplayer-dev
+Section: libdevel
+Architecture: any
+Depends: libgrooveplayer3 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: audio device playback sink for libgroove
+ Attaches to a GroovePlaylist and sends audio frames to a sound device.
+
+Package: libgrooveplayer3
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: audio device playback sink for libgroove
+ Attaches to a GroovePlaylist and sends frames to a sound device.
+
+Package: libgrooveloudness-dev
+Section: libdevel
+Architecture: any
+Depends: libgrooveloudness3 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: audio device playback sink for libgroove
+ loudness scanner sink - uses the EBU R 128 standard to detect loudness. The
+ values it produces are compatible with ReplayGain.
+
+Package: libgrooveloudness3
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: audio device playback sink for libgroove
+ loudness scanner sink - uses the EBU R 128 standard to detect loudness. The
+ values it produces are compatible with ReplayGain.
