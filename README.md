@@ -2,9 +2,6 @@
 
 Generic music player backend library.
 
-For documentation, see include/groove.h and the examples. Live chat is
-available in the #libgroove channel of irc.freenode.org.
-
 ## Features
 
  * Uses [libav](http://www.libav.org/) for robust decoding and encoding.
@@ -46,21 +43,18 @@ in your local package manager.
 
 ### Bundled Dependencies
 
+For convenience, if any of these libraries are missing from your system,
+libgroove will compile against a bundled version.
+
  * [libav](http://libav.org)
-   - Once libav makes an upstream release, libgroove will try to build against
-     the system libav and fall back on the bundled version.
  * [libebur128](https://github.com/jiixyj/libebur128)
-   - libgroove tries to build against system libebur128 library and falls back
-     on the bundled version.
  * [libsdl2-dev](http://www.libsdl.org/)
-   - libgroove tries to build against system SDL2 library and falls back on
-     the bundled version.
 
 ## Installation
 
 ### Pre-Built Packages
 
- * Ubuntu 13.10 Saucy - https://launchpad.net/~andrewrk/+archive/libgroove
+ * [Ubuntu PPA](https://launchpad.net/~andrewrk/+archive/libgroove)
 
    ```
    sudo apt-add-repository ppa:andrewrk/libgroove
@@ -74,6 +68,24 @@ in your local package manager.
  2. Verify that all dependencies say "OK".
  3. `make`
  4. `sudo make install`
+
+## Documentation
+
+ * Check out the example programs in the example folder.
+ * Read some header files for the relevant APIs:
+   * groove/groove.h
+     - global stuff
+     - GrooveFile
+     - GroovePlaylist
+     - GrooveBuffer
+     - GrooveSink
+   * groove/encoder.h
+     - GrooveEncoder
+   * grooveplayer/player.h
+     - GroovePlayer
+   * grooveloudness/loudness.h
+     - GrooveLoudnessDetector
+ * Join #libgroove on irc.freenode.org and ask questions.
 
 ## Projects Using libgroove
 
