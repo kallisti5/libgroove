@@ -1,7 +1,7 @@
 Source: libgroove
 Priority: extra
 Maintainer: Andrew Kelley <superjoe30@gmail.com>
-Build-Depends: debhelper (>= 9.0.0), cmake, libbz2-dev, yasm, libsdl2-dev, libmp3lame-dev, libebur128-dev
+Build-Depends: debhelper (>= 9.0.0), cmake, libsdl2-dev, libebur128-dev, libavformat-dev, libavcodec-dev, libavutil-dev, libavfilter-dev, libav-tools
 Standards-Version: 3.9.4
 Section: libs
 Homepage: https://github.com/superjoe30/libgroove

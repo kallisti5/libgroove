@@ -1,3 +1,9 @@
+libgroove (3.0.2-1ubuntu1) saucy; urgency=low
+
+  * build: add static targets to all libraries
+
+ -- Andrew Kelley <superjoe30@gmail.com>  Mon, 25 Nov 2013 01:06:16 -0500
+
 libgroove (3.0.1-1ubuntu1) saucy; urgency=low
 
   * update README

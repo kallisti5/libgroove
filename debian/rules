@@ -9,7 +9,5 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-export DEB_LDFLAGS_MAINT_STRIP = -Wl,-Bsymbolic-functions
-
 %:
 	dh $@ 
