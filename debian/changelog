@@ -1,3 +1,10 @@
+libgroove (3.0.1-1ubuntu1) saucy; urgency=low
+
+  * update README
+  * build: depend on system libav if possible
+
+ -- Andrew Kelley <superjoe30@gmail.com>  Mon, 25 Nov 2013 00:48:09 -0500
+
 libgroove (3.0.0-1ubuntu1) saucy; urgency=low
 
   * fix build when libspeexdsp is installed
