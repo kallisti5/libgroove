@@ -6,7 +6,7 @@ include(ExternalProject)
 set(LIBGROOVE_STATUS "yes")
 set(LIBGROOVE_VERSION_MAJOR 3)
 set(LIBGROOVE_VERSION_MINOR 0)
-set(LIBGROOVE_VERSION_PATCH 1)
+set(LIBGROOVE_VERSION_PATCH 2)
 set(LIBGROOVE_VERSION "${LIBGROOVE_VERSION_MAJOR}.${LIBGROOVE_VERSION_MINOR}.${LIBGROOVE_VERSION_PATCH}")
 message("Configuring libgroove version ${LIBGROOVE_VERSION}")
 file(GLOB_RECURSE LIBGROOVE_SOURCES ${CMAKE_SOURCE_DIR}/groove/*.c)
@@ -254,6 +254,17 @@ else()
 endif()
 target_link_libraries(groove ${CMAKE_THREAD_LIBS_INIT})
 
+
+add_library(groove_static STATIC ${LIBGROOVE_SOURCES} ${LIBGROOVE_HEADERS})
+set_target_properties(groove_static PROPERTIES
+  OUTPUT_NAME groove
+  COMPILE_FLAGS "${LIB_CFLAGS} -fPIC")
+if(LIBAV_IS_BUNDLED)
+  add_dependencies(groove_static libav)
+endif()
+install(TARGETS groove_static DESTINATION lib)
+
+
 install(FILES
   "groove/groove.h"
   "groove/queue.h"
@@ -300,6 +311,17 @@ else()
   install(FILES "grooveplayer/player.h" DESTINATION "include/grooveplayer")
   install(TARGETS grooveplayer DESTINATION lib)
 
+  add_library(grooveplayer_static STATIC
+    ${LIBGROOVE_PLAYER_SOURCES}
+    ${LIBGROOVE_PLAYER_HEADERS})
+  set_target_properties(grooveplayer_static PROPERTIES
+    OUTPUT_NAME grooveplayer
+    COMPILE_FLAGS "${LIB_CFLAGS} -fPIC")
+  if(SDL2_IS_BUNDLED)
+    add_dependencies(grooveplayer_static SDL2-static)
+  endif()
+  install(TARGETS grooveplayer_static DESTINATION lib)
+
 
   add_executable(playlist example/playlist.c ${PROJECT_SOURCE_DIR}/grooveplayer/player.h)
   set_target_properties(playlist PROPERTIES
@@ -334,6 +356,19 @@ else()
 
   install(FILES "grooveloudness/loudness.h" DESTINATION "include/grooveloudness")
   install(TARGETS grooveloudness DESTINATION lib)
+
+
+  add_library(grooveloudness_static STATIC
+    ${LIBGROOVE_LOUDNESS_SOURCES}
+    ${LIBGROOVE_LOUDNESS_HEADERS})
+  set_target_properties(grooveloudness_static PROPERTIES
+    OUTPUT_NAME grooveloudness
+    COMPILE_FLAGS "${LIB_CFLAGS} -fPIC")
+  if(EBUR128_IS_BUNDLED)
+    add_dependencies(grooveloudness_static ebur128_static)
+  endif()
+  install(TARGETS grooveloudness_static DESTINATION lib)
+
 
   add_executable(replaygain example/replaygain.c)
   set_target_properties(replaygain PROPERTIES
