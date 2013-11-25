@@ -11,7 +11,7 @@ Vcs-Browser: https://github.com/superjoe30/libgroove
 Package: libgroove-dev
 Section: libdevel
 Architecture: any
-Depends: libgroove3 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libgroove3 (= ${binary:Version}), ${misc:Depends}
 Description: generic music player backend C library
  Uses libav for robust decoding and encoding.
  Add and remove entries on a playlist for gapless playback.
@@ -49,7 +49,7 @@ Description: generic music player backend C library
 Package: libgrooveplayer-dev
 Section: libdevel
 Architecture: any
-Depends: libgrooveplayer3 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libgrooveplayer3 (= ${binary:Version}), ${misc:Depends}
 Description: audio device playback sink for libgroove
  Attaches to a GroovePlaylist and sends audio frames to a sound device.
 
@@ -63,7 +63,7 @@ Description: audio device playback sink for libgroove
 Package: libgrooveloudness-dev
 Section: libdevel
 Architecture: any
-Depends: libgrooveloudness3 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libgrooveloudness3 (= ${binary:Version}), ${misc:Depends}
 Description: audio device playback sink for libgroove
  loudness scanner sink - uses the EBU R 128 standard to detect loudness. The
  values it produces are compatible with ReplayGain.
