@@ -1,3 +1,9 @@
+libgroove (3.0.2-1ubuntu2) precise; urgency=low
+
+  * fix sdl dependency on precise
+
+ -- Andrew Kelley <superjoe30@gmail.com>  Thu, 30 Jan 2014 20:46:10 -0500
+
 libgroove (3.0.2-1ubuntu1) saucy; urgency=low
 
   * build: add static targets to all libraries
