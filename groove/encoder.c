@@ -157,6 +157,8 @@ static void *encode_thread(void *arg) {
             if (avformat_write_header(e->fmt_ctx, NULL) < 0) {
                 av_log(NULL, AV_LOG_ERROR, "could not write header\n");
             }
+            // flush the header out
+            av_write_frame(e->fmt_ctx, NULL);
             avio_flush(e->avio);
             e->sent_header = 1;
         }

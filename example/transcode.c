@@ -85,7 +85,19 @@ int main(int argc, char * argv[]) {
 
     struct GrooveBuffer *buffer;
 
+    int is_header = 1;
     while (groove_encoder_buffer_get(encoder, &buffer, 1) == GROOVE_BUFFER_YES) {
+        if (!buffer->item) {
+            if (is_header) {
+                // header
+                fprintf(stderr, "%d bytes header\n", buffer->size);
+            } else {
+                // footer
+                fprintf(stderr, "%d bytes footer\n", buffer->size);
+            }
+        } else {
+            is_header = !is_header;
+        }
         fwrite(buffer->data[0], 1, buffer->size, f);
         groove_buffer_unref(buffer);
     }
