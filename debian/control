@@ -12,8 +12,8 @@ Package: libgroove-dev
 Section: libdevel
 Architecture: any
 Depends: libgroove3 (= ${binary:Version}), ${misc:Depends}
-Description: audio dispatching library
- Uses libav for robust decoding and encoding.
+Description: audio dispatching library (development files)
+ Uses libav for decoding and encoding.
  Add and remove entries on a playlist for gapless playback.
  Supports idempotent pause, play, and seek.
  Per-playlist-item gain adjustment so you can implement loudness compensation
@@ -31,7 +31,7 @@ Package: libgroove3
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: generic music player backend C library
+Description: audio dispatching library
  Uses libav for decoding and encoding.
  Add and remove entries on a playlist for gapless playback.
  Supports idempotent pause, play, and seek.
@@ -50,7 +50,7 @@ Package: libgrooveplayer-dev
 Section: libdevel
 Architecture: any
 Depends: libgrooveplayer3 (= ${binary:Version}), ${misc:Depends}
-Description: audio device playback sink for libgroove
+Description: audio device playback sink for libgroove (development files)
  Attaches to a GroovePlaylist and sends audio frames to a sound device.
 
 Package: libgrooveplayer3
@@ -64,7 +64,7 @@ Package: libgrooveloudness-dev
 Section: libdevel
 Architecture: any
 Depends: libgrooveloudness3 (= ${binary:Version}), ${misc:Depends}
-Description: audio device playback sink for libgroove
+Description: loudness scanner sink for libgroove (development files)
  loudness scanner sink - uses the EBU R 128 standard to detect loudness. The
  values it produces are compatible with ReplayGain.
 
@@ -72,6 +72,6 @@ Package: libgrooveloudness3
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: audio device playback sink for libgroove
+Description: loudness scanner sink for libgroove
  loudness scanner sink - uses the EBU R 128 standard to detect loudness. The
  values it produces are compatible with ReplayGain.
