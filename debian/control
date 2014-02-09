@@ -2,7 +2,7 @@ Source: libgroove
 Priority: extra
 Maintainer: Andrew Kelley <superjoe30@gmail.com>
 Build-Depends: debhelper (>= 9.0.0), cmake, libsdl2-dev, libebur128-dev, libavformat-dev, libavcodec-dev, libavutil-dev, libavfilter-dev, libav-tools, pkg-config
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Section: libs
 Homepage: https://github.com/andrewrk/libgroove
 Vcs-Git: git://github.com/andrewrk/libgroove.git
@@ -32,7 +32,7 @@ Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: generic music player backend C library
- Uses libav for robust decoding and encoding.
+ Uses libav for decoding and encoding.
  Add and remove entries on a playlist for gapless playback.
  Supports idempotent pause, play, and seek.
  Per-playlist-item gain adjustment so you can implement loudness compensation
