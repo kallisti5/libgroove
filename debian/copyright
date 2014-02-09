@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: libgroove
-Source: https://github.com/superjoe30/libgroove/blob/master/COPYING
+Source: https://github.com/andrewrk/libgroove/blob/master/COPYING
 
 Files: *
 Copyright: 2013 Andrew Kelley <superjoe30@gmail.com>

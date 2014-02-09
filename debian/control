@@ -1,18 +1,18 @@
 Source: libgroove
 Priority: extra
 Maintainer: Andrew Kelley <superjoe30@gmail.com>
-Build-Depends: debhelper (>= 9.0.0), cmake, libsdl2-dev, libebur128-dev, libavformat-dev, libavcodec-dev, libavutil-dev, libavfilter-dev, libav-tools
+Build-Depends: debhelper (>= 9.0.0), cmake, libsdl2-dev, libebur128-dev, libavformat-dev, libavcodec-dev, libavutil-dev, libavfilter-dev, libav-tools, pkg-config
 Standards-Version: 3.9.4
 Section: libs
-Homepage: https://github.com/superjoe30/libgroove
-Vcs-Git: git://github.com/superjoe30/libgroove.git
-Vcs-Browser: https://github.com/superjoe30/libgroove
+Homepage: https://github.com/andrewrk/libgroove
+Vcs-Git: git://github.com/andrewrk/libgroove.git
+Vcs-Browser: https://github.com/andrewrk/libgroove
 
 Package: libgroove-dev
 Section: libdevel
 Architecture: any
 Depends: libgroove3 (= ${binary:Version}), ${misc:Depends}
-Description: generic music player backend C library
+Description: audio dispatching library
  Uses libav for robust decoding and encoding.
  Add and remove entries on a playlist for gapless playback.
  Supports idempotent pause, play, and seek.

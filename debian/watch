@@ -1,0 +1,2 @@
+version=2
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/<libgroove>-$1\.tar\.gz/ https://github.com/andrewrk/libgroove/tags .*/v?(\d\S*)\.tar\.gz
